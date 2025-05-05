@@ -2,6 +2,8 @@
 #define GHOSTCOMM_H
 
 // function to encode text to morse code
-char* encodeToMorse(char *text);
+char *encodeToMorse(char *text);
+// function to decode text to morse code
+char *decodeFromMorse(char *morseCodeText);
 
 #endif

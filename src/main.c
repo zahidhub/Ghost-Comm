@@ -6,7 +6,7 @@
  *              Components:
  *                  - clearBuffer(): clear the buffer after every input
  *                  - main(): handles user interaction, input selection, and calls
- *                            appropriate encoding logic.
+ *                            appropriate encoding and decoding logic.
  */
 
 #include <stdio.h>
@@ -35,7 +35,7 @@ int main() {
 
     // condition to run the option selected by the user.
     if (option == 1) {
-        printf("Enter text to encode: ");
+        printf("Enter text to encode:\n");
         fgets(text, sizeof(text), stdin);
         text[strcspn(text, "\n")] = 0;
 
@@ -47,7 +47,16 @@ int main() {
         free(encoded);
 
     } else if (option == 2) {
-        printf("Not yet implemented:\n");
+        printf("Enter Morse Code to decode:\n");
+        fgets(text, sizeof(text), stdin);
+        text[strcspn(text, "\n")] = 0;
+
+        // call the 'decodeFromMorse' function and store it
+        // in the variable 'decoded'.
+        char *decoded = decodeFromMorse(text);
+        printf("Decoded Morse: %s\n", decoded);
+        // free the memory
+        free(decoded);
 
     } else {
         printf("Invalid option.\n");
