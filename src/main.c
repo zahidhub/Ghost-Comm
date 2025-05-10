@@ -25,13 +25,16 @@ int main() {
     // size of input characters
     char text[2000];
 
+    while(option != 3){
     // options for the user to choose from
     printf("=== Ghost Comm ===\n");
     printf("1. Encode text to Morse\n");
     printf("2. Decode Morse to text\n");
+    printf("3. Exit\n");
     printf("Enter your option: ");
     scanf("%d", &option);
     clearBuffer();
+
 
     // condition to run the option selected by the user.
     if (option == 1) {
@@ -58,9 +61,12 @@ int main() {
         // free the memory
         free(decoded);
 
+    } else if(option == 3){
+        printf("Salue!\n");
     } else {
         printf("Invalid option.\n");
     }
+}
 
     return 0;
 }
