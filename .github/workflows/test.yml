@@ -14,7 +14,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@2
 
-      - name: Test on CMAke
+      - name: Build on CMAke
         uses: threeal/cmake-action@v2.1.0
+      
+      - name: Run Tests
         run: make -C build test
 
