@@ -1,0 +1,22 @@
+name: test
+
+on:
+  push:
+  create:
+  release:
+    types: [published]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build on CMAke
+        uses: threeal/cmake-action@v2.1.0
+      
+      - name: Run Tests
+        run: make -C build test
+
