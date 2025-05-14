@@ -62,7 +62,7 @@ int main() {
         free(decoded);
 
     } else if(option == 3){
-        printf("Salue!\n");
+        printf("\nSalute!\n");
     } else {
         printf("Invalid option.\n");
     }
