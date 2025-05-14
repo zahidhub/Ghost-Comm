@@ -30,6 +30,7 @@ The project works with standard input and runs Unit tests via CTest. Moreover CI
 ```
 .
 ├── CMakeLists.txt        # top-level build script
+├── Dockerfile            # Docker build script
 ├── src/
 │   ├── ghostComm.c         # encryption/decryption logic
 │   ├── ghostComm.h
@@ -55,6 +56,8 @@ The project works with standard input and runs Unit tests via CTest. Moreover CI
 
 **`CMakelists.c`**: Helps to automate the build and make the process easy.
 
+**`Dockerfile`**: Two-stage Alpine-based containerization for multi-architecture images
+
 #### CI/CD
 **`build.yml`**: The file hold jobs to build the project in pipeline.
 
@@ -62,7 +65,33 @@ The project works with standard input and runs Unit tests via CTest. Moreover CI
 
 ---
 
-## Installation (Run Locally)
+## Installation
+
+### Via Docker
+
+**Prerequisites:** Have Docker installed in your machine
+
+- **Step1:** Pull the image
+
+```
+# Pull latest release
+docker pull zahidhub/ghost-comm:latest
+
+# Or pull a specific version
+docker pull zahidhub/ghost-comm:v0.0.2
+```
+
+- **Step2:** Run interactively (attention to Tag)
+
+```
+# Run latest release
+docker run --rm -it zahidhub/ghost-comm:latest
+
+# Or run a specific version
+docker run --rm -it zahidhub/ghost-comm:v0.0.2
+```
+
+### Run Locally
 
  **Prerequisites:** CMake ≥ 3.10, A C compiler (GCC, Clang, MSVC, etc.)
 
